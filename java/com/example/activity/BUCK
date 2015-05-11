@@ -1,0 +1,27 @@
+android_library(
+  name = 'activity',
+  srcs = glob(['*.java']),
+  visibility = [ 'PUBLIC' ],
+  deps = [
+    ':jsr',
+	]
+)
+
+project_config(
+  src_target = ':activity',
+)
+
+prebuilt_jar(
+    name = 'jsr',
+    binary_jar = ':jsr-jar',
+    visibility = [
+        'PUBLIC',
+    ],
+)
+
+remote_file(
+    name = 'jsr-jar',
+    url = 'mvn:com.google.code.findbugs:jsr305:jar:3.0.0',
+    sha1 = '5871fb60dc68d67da54a663c3fd636a10a532948',
+    out = 'jsr305.jar',
+)
