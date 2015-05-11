@@ -5,6 +5,8 @@ Shutting down nailgun server...
 Using watchman.
 Using buckd.
 
+	buck build app
+
 	echo "" >> java/com/example/activity/MyFirstActivity.java 
 
 	buck build app
